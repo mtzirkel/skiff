@@ -33,6 +33,6 @@ urlpatterns = [
     url(r'^squizlist/$', quiz_views.student_quizlist),
     url(r'^(?P<quiz_id>[0-9]+)/add_question/$', multichoice_views.add_mcquestion),#old not as good way to add question
     url(r'^quizquestions/(?P<quiz_id>[0-9]+)/$', quiz_views.question_list, name='question_list'),#new way to add question
-    url(r'^quizquestions/(?P<quiz_id>[0-9]+)/quuestioncreate/$', quiz_views.question_create, name='question_create'), #new way to add question
+    url(r'^quizquestions/(?P<quiz_id>[0-9]+)/questioncreate/$', quiz_views.question_create, name='question_create'), #new way to add question
     url(r'^quizquestions/(?P<quiz_id>[0-9]+)/question/(?P<pk>[0-9]+)/update/$', quiz_views.question_update, name='question_update'),
 ]

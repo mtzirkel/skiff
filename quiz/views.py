@@ -40,7 +40,7 @@ def teacher_quizlist(request):
 
 def question_list(request, quiz_id):
     questions = Question.objects.filter(inquiz_id=quiz_id)
-    return render(request, 'quiz/list_questions.html', {'questions': questions})
+    return render(request, 'quiz/list_questions.html', {'questions': questions, 'quiz_id': quiz_id})
 
 # def question_create(request, quiz_id):
 #     data = dict()
