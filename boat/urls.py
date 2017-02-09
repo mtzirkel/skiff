@@ -32,9 +32,16 @@ urlpatterns = [
     url(r'^quizlist/$', quiz_views.teacher_quizlist),
     url(r'^squizlist/$', quiz_views.student_quizlist),
     url(r'^(?P<quiz_id>[0-9]+)/add_question/$', multichoice_views.add_mcquestion),#old not as good way to add question
+<<<<<<< HEAD
     url(r'^quizquestions/(?P<quiz_id>[0-9]+)/', quiz_views.question_list, name='question-list'),#new way to add question
     url(r'^quizquestions/(?P<quiz_id>[0-9]+)/questioncreate/$', quiz_views.question_create, name='question-create'), #new way to add question
     url(r'^quizquestions/(?P<quiz_id>[0-9]+)/question/(?P<pk>[0-9]+)/update/$', quiz_views.question_update, name='question-update'),
 ]
 
 
+=======
+    url(r'^quizquestions/(?P<quiz_id>[0-9]+)/$', quiz_views.question_list, name='question_list'),#new way to add question
+    url(r'^quizquestions/(?P<quiz_id>[0-9]+)/questioncreate/$', quiz_views.question_create, name='question_create'), #new way to add question
+    url(r'^quizquestions/(?P<quiz_id>[0-9]+)/question/(?P<pk>[0-9]+)/update/$', quiz_views.question_update, name='question_update'),
+]
+>>>>>>> ce7433616fc770c17082fc59dbaacf63f996abee

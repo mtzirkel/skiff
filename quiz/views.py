@@ -40,7 +40,10 @@ def teacher_quizlist(request):
 
 def question_list(request, quiz_id):
     questions = Question.objects.filter(inquiz_id=quiz_id)
+<<<<<<< HEAD
     #quiz = Quiz.objects.filter(quiz_id)
+=======
+>>>>>>> ce7433616fc770c17082fc59dbaacf63f996abee
     return render(request, 'quiz/list_questions.html', {'questions': questions, 'quiz_id': quiz_id})
 
 # def question_create(request, quiz_id):
@@ -68,7 +71,11 @@ def question_list(request, quiz_id):
 #     return JsonResponse(data)
 
 
+<<<<<<< HEAD
 def save_question_form(request, form, template_name):
+=======
+def save_question_form(request, form, template_name, quiz_id):
+>>>>>>> ce7433616fc770c17082fc59dbaacf63f996abee
     data = dict()
     if request.method == 'POST':
         if form.is_valid():
@@ -86,23 +93,38 @@ def save_question_form(request, form, template_name):
     return JsonResponse(data)
 
 
+<<<<<<< HEAD
 def question_create(request):
+=======
+def question_create(request, quiz_id):
+>>>>>>> ce7433616fc770c17082fc59dbaacf63f996abee
     if request.method == 'POST':
         form = MCQuestionForm(request.POST)
     else:
         form = MCQuestionForm()
     return save_question_form(request, form,
+<<<<<<< HEAD
                               'quiz/partial_question_create.html')
 
 
 def question_update(request, quiz_id, pk):
+=======
+                              'quiz/partial_question_create.html', quiz_id)
+
+
+def question_update(request, pk, quiz_id):
+>>>>>>> ce7433616fc770c17082fc59dbaacf63f996abee
     book = get_object_or_404(Question, pk=pk)
     if request.method == 'POST':
         form = MCQuestionForm(request.POST, instance=book)
     else:
         form = MCQuestionForm(instance=book)
     return save_question_form(request, form,
+<<<<<<< HEAD
                               'quiz/partial_book_update.html')
+=======
+                              'quiz/partial_book_update.html', quiz_id)
+>>>>>>> ce7433616fc770c17082fc59dbaacf63f996abee
 
 
 def student_quizlist(request):
